@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  orion:
+    image: orion:latest
+    ports:
+      - "1026:1026"
+    depends_on:
+      - mongo
+    command: -dbhost mongo
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager  # Ensure the service runs only on manager node
+
+  mongo:
+    image: mongo:4.2.12
+    command: --nojournal
+    ports:
+      - 27017:27017
+    volumes:
+      - /C/Mine/mongoData:/data/db
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager  # Ensure the service runs only on manager node
+
+  mongo_express:
+    image: mongo-express:0.54.0
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=default
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+    ports:
+      - "8081:8081"
+    restart: on-failure
+    depends_on:
+      - mongo
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager  # Ensure the service runs only on manager node
