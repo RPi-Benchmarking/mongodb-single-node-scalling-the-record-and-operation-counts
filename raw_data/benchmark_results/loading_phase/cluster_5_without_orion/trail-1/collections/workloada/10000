@@ -1,0 +1,15 @@
+Mongo Express
+Database:
+ycsb_data_worker1
+Viewing Database: ycsb_data_worker1
+Collections
+Collection Name
+usertable
+Database Stats
+Collections (incl. system.namespaces)	1
+Data Size	11.7 MB
+Storage Size	11.6 MB
+Avg Obj Size #	1.17 KB
+Objects #	10000
+Indexes #	1
+Index Size	279 KB
