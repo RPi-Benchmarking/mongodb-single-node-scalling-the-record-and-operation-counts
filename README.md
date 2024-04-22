@@ -25,4 +25,31 @@ maanger
    sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://192.168.1.196:27017/ycsb_data_worker" -p operationcount=40000 -threads 16
    /////////////////////////////
 6. we used Python 2.7.9rc1
-7. 
+////////////////////
+Cassandra
+
+1. install cassandra binding:  https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-cassandra-binding-0.17.0.tar.gz
+
+2. sudo tar xvf ycsb-cassandra-binding-0.17.0.tar.gz
+
+3. cd ycsb-cassandra-binding-0.17.0
+
+4. to know the ip for the raspberry pi: hostname -I
+
+5. sudo apt update
+
+6. sudo apt upgrade
+
+7. sudo pip3 install docker-compose
+docker-compose –version
+
+8. sudo apt-get purge openjdk-11-jre-headless
+sudo apt-get install openjdk-11-jre-headless
+sudo apt-get install openjdk-11-jre
+
+9. ssh-keygen -R 192.168.1.241
+
+10. 
+
+
+
