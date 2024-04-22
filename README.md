@@ -8,7 +8,7 @@ we used Raspberry Pi
 3. The orion version which we used is 3.12.0-next, rasbpery pi 4 Model B 8GB LPDDR RAM, 64-bit quad-core Cortex-A72 processor, 
 4. we used Yahoo! Cloud System Benchmark.
    /////////////////////////////////////////////////////////////////////////
-   Commands:
+5. Commands:
 Cluster:
    load:
 maanger
@@ -24,3 +24,5 @@ maanger
    worker:
    sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://192.168.1.196:27017/ycsb_data_worker" -p operationcount=40000 -threads 16
    /////////////////////////////
+6. we used Python 2.7.9rc1
+7. 
