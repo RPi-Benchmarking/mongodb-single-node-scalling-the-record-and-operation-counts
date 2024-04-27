@@ -174,20 +174,41 @@ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
 
 
 
-FROM ruby:2.6.2-alpine
-LABEL maintainer 'Doğukan Çağatay <dcagatay@gmail.com>'
+#!/bin/bash
+set -eu
 
-ENV VERSION 0.5.0
+#HOST IPs
+if [[ ! -v CASSANDRA_HOST_IPS ]]; then
+  CASSANDRA_HOST_IPS="127.0.0.1"
+else
+  CASSANDRA_HOST_IPS="${CASSANDRA_HOST_IPS}"
+fi
 
-RUN apk add --no-cache --update --virtual=build-dependencies build-base linux-headers gcc g++ \
-    && gem install cassandra-web -v ${VERSION} \
-    && apk del build-dependencies \
-    && apk add --no-cache --update bash \
-    && rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
+#PORT
+if [[ ! -v CASSANDRA_PORT ]]; then
+  CASSANDRA_PORT="9042"
+else
+  CASSANDRA_PORT="${CASSANDRA_PORT}"
+fi
 
-COPY run.sh /
-RUN chmod +x /run.sh
+#USERNAME
+if [[ ! -v CASSANDRA_USERNAME ]]; then
+  CASSANDRA_USERNAME="cassandra"
+else
+  CASSANDRA_USERNAME="${CASSANDRA_USERNAME}"
+fi
 
-CMD ["/run.sh"]
+#PASSWORD
+if [[ ! -v CASSANDRA_PASSWORD ]]; then
+  CASSANDRA_PASSWORD="cassandra"
+else
+  CASSANDRA_PASSWORD="${CASSANDRA_PASSWORD}"
+fi
+
+COMMAND="cassandra-web --hosts $CASSANDRA_HOST_IPS --port $CASSANDRA_PORT --username $CASSANDRA_USERNAME --password $CASSANDRA_PASSWORD"
+
+echo $COMMAND
+
+exec $COMMAND
 
 
