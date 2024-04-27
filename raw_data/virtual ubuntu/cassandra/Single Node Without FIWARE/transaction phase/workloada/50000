@@ -1,0 +1,69 @@
+[04/27/24]seed@VM:~/fe/ycsb-cassandra-binding-0.17.0$ sudo ./bin/ycsb run cassandra-cql -s -P workloads/workloada -p operationcount=50000 -threads 16 -p hosts="10.6.0.11" -p port=9042 -p cassandra.username=cassandra -p cassandra.password=cassandra
+java -cp /home/seed/fe/ycsb-cassandra-binding-0.17.0/cassandra-binding/conf:/home/seed/fe/ycsb-cassandra-binding-0.17.0/conf:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/netty-buffer-4.0.33.Final.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/cassandra-binding-0.17.0.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/netty-codec-4.0.33.Final.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/metrics-core-3.1.2.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/cassandra-driver-core-3.0.0.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/guava-16.0.1.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/slf4j-api-1.7.25.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/core-0.17.0.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/netty-handler-4.0.33.Final.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/netty-common-4.0.33.Final.jar:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/netty-transport-4.0.33.Final.jar site.ycsb.Client -db site.ycsb.db.CassandraCQLClient -s -P workloads/workloada -p operationcount=50000 -threads 16 -p hosts=10.6.0.11 -p port=9042 -p cassandra.username=cassandra -p cassandra.password=cassandra -t
+Command line: -db site.ycsb.db.CassandraCQLClient -s -P workloads/workloada -p operationcount=50000 -threads 16 -p hosts=10.6.0.11 -p port=9042 -p cassandra.username=cassandra -p cassandra.password=cassandra -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2024-04-27 16:58:58:263 0 sec: 0 operations; est completion in 0 second 
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.PlatformDependent0 (file:/home/seed/fe/ycsb-cassandra-binding-0.17.0/lib/netty-common-4.0.33.Final.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.PlatformDependent0
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Apr 27, 2024 4:58:58 PM io.netty.util.internal.PlatformDependent <clinit>
+INFO: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2024-04-27 16:59:08:139 10 sec: 13192 operations; 1317.36 current ops/sec; est completion in 28 seconds [READ: Count=6599, Max=959999, Min=246, Avg=10527.82, 90=18575, 99=142335, 99.9=252287, 99.99=959487] [UPDATE: Count=6602, Max=985599, Min=329, Avg=10361.24, 90=15639, 99=142335, 99.9=953855, 99.99=975359] 
+2024-04-27 16:59:18:126 20 sec: 50000 operations; 3685.59 current ops/sec; [READ: Count=18286, Max=231167, Min=248, Avg=3446.39, 90=4839, 99=19391, 99.9=188159, 99.99=230015] [CLEANUP: Count=15, Max=7, Min=2, Avg=2.8, 90=3, 99=7, 99.9=7, 99.99=7] [UPDATE: Count=18513, Max=231039, Min=222, Avg=3214.82, 90=4619, 99=17775, 99.9=88127, 99.99=231039] 
+2024-04-27 16:59:18:205 20 sec: 50000 operations; 0 current ops/sec; [READ: Count=0, Max=0, Min=9223372036854775807, Avg=NaN, 90=0, 99=0, 99.9=0, 99.99=0] [CLEANUP: Count=1, Max=2242559, Min=2240512, Avg=2241536, 90=2242559, 99=2242559, 99.9=2242559, 99.99=2242559] [UPDATE: Count=0, Max=0, Min=9223372036854775807, Avg=NaN, 90=0, 99=0, 99.9=0, 99.99=0] 
+[OVERALL], RunTime(ms), 20079
+[OVERALL], Throughput(ops/sec), 2490.163852781513
+[TOTAL_GCS_G1_Young_Generation], Count, 33
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 139
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.6922655510732606
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 33
+[TOTAL_GC_TIME], Time(ms), 139
+[TOTAL_GC_TIME_%], Time(%), 0.6922655510732606
+[READ], Operations, 24885
+[READ], AverageLatency(us), 5324.243158529234
+[READ], MinLatency(us), 246
+[READ], MaxLatency(us), 959999
+[READ], 95thPercentileLatency(us), 13935
+[READ], 99thPercentileLatency(us), 46431
+[READ], Return=OK, 24885
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 140098.625
+[CLEANUP], MinLatency(us), 2
+[CLEANUP], MaxLatency(us), 2242559
+[CLEANUP], 95thPercentileLatency(us), 7
+[CLEANUP], 99thPercentileLatency(us), 2242559
+[UPDATE], Operations, 25115
+[UPDATE], AverageLatency(us), 5093.4010352379055
+[UPDATE], MinLatency(us), 222
+[UPDATE], MaxLatency(us), 985599
+[UPDATE], 95thPercentileLatency(us), 12127
+[UPDATE], 99thPercentileLatency(us), 39007
+[UPDATE], Return=OK, 25115
+[04/27/24]seed@VM:~/fe/ycsb-cassandra-binding-0.17.0$ 
