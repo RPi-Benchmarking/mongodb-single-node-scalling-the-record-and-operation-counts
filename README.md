@@ -115,29 +115,57 @@ sudo apt-get install openjdk-11-jre
 
 9. ssh-keygen -R 192.168.1.241
 
+10. Install python
+
+    
+sudo wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9rc1.tgz
+
+curl -O https://www.python.org/ftp/python/2.7.9/Python-2.7.9rc1.tgz
+
+sudo tar -xzvf Python-2.7.9rc1.tgz
+
+cd Python-2.7.9rc1
+
+./configure
+
+make
+
+sudo make install
+
+python2 –version
+
+………
+uname -m
+
+………
+Single Rpi
+
+administrator@raspberrypi:~/fe $ sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://192.168.1.52:27017/admin"
+…..
+Built docker swarem of 5 rpi
+
+Sudo docker swarm init
+
+sudo docker swarm leave –force
+sudo docker node ls
+
+sudo docker swarm leave
+
+sudo docker swarm join --token SWMTKN-1-1tpj1k1ezfczanr7cv77zbqp4e5wpzuz95sl25ijpw01i4eahc-8l6obx3a3ik5ph3ryd20lzb4f 10.0.13.240:2377
+
+sudo docker stack deploy -c docker-compose.yml mongodb_stack
+
+sudo docker stack rm mongodb_stack
+
+…………..
+
+Clean 
+
+sudo docker system prune -af
 
 
 
-version: '3.7'
 
-services:
-  cassandra_db:
-    image: cassandra:latest
-    ports:
-      - 9042:9042
-    volumes:
-      - /C/Mine/cassandraData:/var/lib/cassandra
-
-  cassandra_web:
-    image: katanas/cassandra-web:latest
-    environment:
-      - DATABASE_HOST=cassandra_db
-      - DATABASE_PORT=9042
-    ports:
-      - "3000:3000"
-    restart: on-failure
-    depends_on:
-      - cassandra_db
 
 
 
