@@ -68,7 +68,30 @@ sudo apt-get install openjdk-11-jre
 
 9. ssh-keygen -R 192.168.1.241
 
-10. 
+
+
+
+version: '3.7'
+
+services:
+  cassandra_db:
+    image: cassandra:latest
+    ports:
+      - 9042:9042
+    volumes:
+      - /C/Mine/cassandraData:/var/lib/cassandra
+
+  cassandra_web:
+    image: katanas/cassandra-web:latest
+    environment:
+      - DATABASE_HOST=cassandra_db
+      - DATABASE_PORT=9042
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    depends_on:
+      - cassandra_db
+
 
 
 
