@@ -45,7 +45,9 @@ cd ycsb-mongodb-binding-0.17.0
 ////////
 Cassandra
 
-1. install cassandra binding:  https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-cassandra-binding-0.17.0.tar.gz
+1. [04/27/24]seed@VM:~/fe$ sudo wget --no-check-certificate https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-cassandra-binding-0.17.0.tar.gz
+
+install cassandra binding:  https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-cassandra-binding-0.17.0.tar.gz
 
 2. sudo tar xvf ycsb-cassandra-binding-0.17.0.tar.gz
 
