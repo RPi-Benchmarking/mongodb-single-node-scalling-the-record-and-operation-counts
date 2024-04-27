@@ -26,6 +26,50 @@ maanger
    /////////////////////////////
 sudo pip3 install docker-compose
 
+sudo docker ps
+
+sudo docker-compose up -d
+
+sudo curl localhost:1026/version
+
+sudo curl 192.168.1.241:1026/version
+
+sudo docker-compose -f docker-compose.yml up -d
+
+sudo docker-compose -f docker-compose2.yml down
+
+sudo docker stack deploy -c docker-compose2.yml your_stack_name
+sudo docker node ls
+
+1 sudo apt update
+
+2 sudo apt upgrade
+
+sudo docker stack deploy -c docker-compose6.yml my_stack_name
+
+sudo docker stack ls
+
+sudo docker stack rm my_stack_name
+
+sudo apt-get install python3
+
+python3 –version
+
+sudo apt install default-jdk
+
+sudo apt-get clean
+
+sudo docker stack ps my_stack_name
+
+sudo docker swarm init
+
+sudo docker swarm join-token worker
+
+sudo reboot
+
+sudo systemctl restart docker
+
+
    ////////////
 7. we used Python 2.7.9rc1
 
