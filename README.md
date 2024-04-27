@@ -171,6 +171,18 @@ sudo apt-get update
 
 sudo apt-get install ./docker-desktop-<version>-<arch>.deb
 
+..........
+
+Cassanda
+loading to single node
+sudo ./bin/ycsb load cassandra-cql -s -P workloads/workloada -p recordcount=50000 -threads 16 -p hosts="10.6.0.11" -p port=9042 -p cassandra.username=cassandra -p cassandra.password=cassandra
+
+transaction to sinlge node 
+sudo ./bin/ycsb run cassandra-cql -s -P workloads/workloada -p operationcount=50000 -threads 16 -p hosts="10.6.0.11" -p port=9042 -p cassandra.username=cassandra -p cassandra.password=cassandra
+
+...............
+
+
 
 Links:
 1. Cassandra docker-compose:
