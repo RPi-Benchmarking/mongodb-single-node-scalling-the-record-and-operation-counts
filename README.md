@@ -24,7 +24,10 @@ maanger
    worker:
    sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://192.168.1.196:27017/ycsb_data_worker" -p operationcount=40000 -threads 16
    /////////////////////////////
-6. we used Python 2.7.9rc1
+sudo pip3 install docker-compose
+
+   ////////////
+7. we used Python 2.7.9rc1
 
    
 ////////////////////
