@@ -163,6 +163,8 @@ Clean
 
 sudo docker system prune -af
 
+https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-darwin-x86_64
+
 
 
 
