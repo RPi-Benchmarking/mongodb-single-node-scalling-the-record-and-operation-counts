@@ -25,7 +25,24 @@ maanger
    sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://192.168.1.196:27017/ycsb_data_worker" -p operationcount=40000 -threads 16
    /////////////////////////////
 6. we used Python 2.7.9rc1
+
+   
 ////////////////////
+
+MongoDB
+
+Commands:
+
+sudo systemctl restart docker
+
+sudo wget https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-mongodb-binding-0.17.0.tar.gz
+
+sudo tar xvf ycsb-mongodb-binding-0.17.0.tar.gz
+
+cd ycsb-mongodb-binding-0.17.0
+
+
+////////
 Cassandra
 
 1. install cassandra binding:  https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-cassandra-binding-0.17.0.tar.gz
