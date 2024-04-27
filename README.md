@@ -174,41 +174,26 @@ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
 
 
 
-#!/bin/bash
-set -eu
-
-#HOST IPs
-if [[ ! -v CASSANDRA_HOST_IPS ]]; then
-  CASSANDRA_HOST_IPS="127.0.0.1"
-else
-  CASSANDRA_HOST_IPS="${CASSANDRA_HOST_IPS}"
-fi
-
-#PORT
-if [[ ! -v CASSANDRA_PORT ]]; then
-  CASSANDRA_PORT="9042"
-else
-  CASSANDRA_PORT="${CASSANDRA_PORT}"
-fi
-
-#USERNAME
-if [[ ! -v CASSANDRA_USERNAME ]]; then
-  CASSANDRA_USERNAME="cassandra"
-else
-  CASSANDRA_USERNAME="${CASSANDRA_USERNAME}"
-fi
-
-#PASSWORD
-if [[ ! -v CASSANDRA_PASSWORD ]]; then
-  CASSANDRA_PASSWORD="cassandra"
-else
-  CASSANDRA_PASSWORD="${CASSANDRA_PASSWORD}"
-fi
-
-COMMAND="cassandra-web --hosts $CASSANDRA_HOST_IPS --port $CASSANDRA_PORT --username $CASSANDRA_USERNAME --password $CASSANDRA_PASSWORD"
-
-echo $COMMAND
-
-exec $COMMAND
+version: "2.1"
+services:
+  cassandra:
+    image: cassandra:3.11.4
+    expose:
+    - 7000
+    - 7001
+    - 7199
+    - 9042
+    - 9160
+  cassandra-web:
+    image: markusgulden/cassandra-web
+    depends_on:
+    - cassandra
+    environment:
+      CASSANDRA_HOST_IPS: 127.0.0.1
+      CASSANDRA_PORT: 9042
+      CASSANDRA_USER: cassandra
+      CASSANDRA_PASSWORD: cassandra
+    ports:
+    - 3000:3000
 
 
