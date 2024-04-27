@@ -172,28 +172,10 @@ sudo apt-get update
 sudo apt-get install ./docker-desktop-<version>-<arch>.deb
 
 
+Links:
+1. Cassandra docker-compose:
+https://hub.docker.com/r/markusgulden/cassandra-web
 
+2. https://github.com/brianfrankcooper/YCSB/releases
 
-version: "2.1"
-services:
-  cassandra:
-    image: cassandra:3.11.4
-    expose:
-    - 7000
-    - 7001
-    - 7199
-    - 9042
-    - 9160
-  cassandra-web:
-    image: markusgulden/cassandra-web
-    depends_on:
-    - cassandra
-    environment:
-      CASSANDRA_HOST_IPS: 127.0.0.1
-      CASSANDRA_PORT: 9042
-      CASSANDRA_USER: cassandra
-      CASSANDRA_PASSWORD: cassandra
-    ports:
-    - 3000:3000
-
-
+3. 
