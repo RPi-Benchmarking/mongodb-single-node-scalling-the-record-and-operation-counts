@@ -1,9 +1,5 @@
 commands
-
 load 
-
 sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=60000 -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
-
 run
-
- sudo ./bin/ycsb run  mongodb -s -P workloads/workloada -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p operationcount=60000 -threads 16
+sudo ./bin/ycsb run  mongodb -s -P workloads/workloada -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p operationcount=60000 -threads 16
