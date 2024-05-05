@@ -1,6 +1,7 @@
 # master_thesis
-this repo includes all the works which are related to my master thesis.
-we used Raspberry Pi
+This repo includes all the works that are related to my master thesis.
+in my master thesis, we benchmarked the MongoDB database with the YCSB tool as it suited the cloud environment. The experimental tests include a single node, a docker swarm of two nodes, and a docker swarm of five nodes. Then we integrated FIWARE Orion with mongoDB. 
+we used Raspberry Pi and this simulates the edge device while the docker swarm simulates the cloud sittings.
 1. to load a record count of 5000 to the manager node, we used this command: sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=5000 -threads 16 -p mongodb.url="mongodb://10.0.13.230:27017/ycsb_data_manager"
 
 2. to load a record count tho the single pi setup, we used this command: sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://192.168.1.52:27017/admin"
