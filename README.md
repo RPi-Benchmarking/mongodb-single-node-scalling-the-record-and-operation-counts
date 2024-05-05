@@ -8,23 +8,33 @@ we used Raspberry Pi and this simulates the edge device while the docker swarm s
 
 3. The orion version which we used is 3.12.0-next, rasbpery pi 4 Model B 8GB LPDDR RAM, 64-bit quad-core Cortex-A72 processor, 
 4. we used Yahoo! Cloud System Benchmark.
+
    /////////////////////////////////////////////////////////////////////////
+   
 5. Commands:
 Cluster:
    load:
 maanger
    administrator@raspberrypi:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -p recordcount=30000 -threads 16 -p mongodb.url="mongodb://192.168.1.182:27017/ycsb_data_manager"
+   
 ...................
+
    worker
    sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -p recordcount=50000 -threads 16 -p mongodb.url="mongodb://192.168.1.196:27017/ycsb_data_worker"
+   
    ..............................
+   
    transaction:
    manager:
    sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://192.168.1.182:27017/ycsb_data_manager" -p operationcount=20000 -threads 16
+   
    ..............
+   
    worker:
    sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://192.168.1.196:27017/ycsb_data_worker" -p operationcount=40000 -threads 16
-   /////////////////////////////
+   
+/////////////////////////////
+   
 sudo pip3 install docker-compose
 
 sudo docker ps
@@ -72,6 +82,7 @@ sudo systemctl restart docker
 
 
    ////////////
+   
 7. we used Python 2.7.9rc1
 
    
@@ -91,6 +102,7 @@ cd ycsb-mongodb-binding-0.17.0
 
 
 ////////
+
 Cassandra
 
 1. [04/27/24]seed@VM:~/fe$ sudo wget --no-check-certificate https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-cassandra-binding-0.17.0.tar.gz
@@ -136,6 +148,7 @@ sudo make install
 python2 –version
 
 ………
+
 uname -m
 
 ………
@@ -223,4 +236,4 @@ https://hub.docker.com/r/markusgulden/cassandra-web
 
 2. https://github.com/brianfrankcooper/YCSB/releases
 
-3. 
+
