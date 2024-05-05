@@ -1,5 +1,6 @@
-commands
-load 
+this directory includes all the raw data to benchmark mongoDB with 60000,70000,80000,90000, and 100000 record counts and operation counts.
+commands:
+loading phase: 
 sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=60000 -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
-run
+transaction phase:
 sudo ./bin/ycsb run  mongodb -s -P workloads/workloada -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p operationcount=60000 -threads 16
