@@ -1,7 +1,18 @@
 # master_thesis
 This repo includes all the works that are related to my master thesis.
-in my master thesis, we benchmarked the MongoDB database with the YCSB tool as it suited the cloud environment. The experimental tests include a single node, a docker swarm of two nodes, and a docker swarm of five nodes. Then we integrated FIWARE Orion with mongoDB. 
-we used Raspberry Pi and this simulates the edge device while the docker swarm simulates the cloud sittings.
+in my master thesis, we benchmarked the MongoDB database with the YCSB tool as it suited the cloud environment. The experimental tests include a single node, a docker swarm of two nodes, and a docker swarm of five. Then we integrated FIWARE Orion with mongoDB. 
+we used Raspberry Pi, which simulates the edge device while the docker swarm simulates the cloud sittings.
+- One of the problems we encountered and solved successfully is that in workload D in the run phase, no insert happens as there are conflicts with the already loaded data in the loading phase. we solved the problem by using this command in the loading phase:
+
+  picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+
+
+  and this command in the transaction phase:
+
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p insertstart=100001 -p operationcount=100000 -p recordcount=100000 -threads 16 
+
+
+  
 1. to load a record count of 5000 to the manager node, we used this command: sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=5000 -threads 16 -p mongodb.url="mongodb://10.0.13.230:27017/ycsb_data_manager"
 
 2. to load a record count tho the single pi setup, we used this command: sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://192.168.1.52:27017/admin"
