@@ -11,7 +11,17 @@ we used Raspberry Pi, which simulates the edge device while the docker swarm sim
 
 picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p insertstart=100001 -p operationcount=100000 -p recordcount=100000 -threads 16 
 
+- or change the configuration of the workloadd file in the ycsb directory to 100000 record counts and operations counts and then execute these commands:
 
+- loading phase:
+
+-  picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+
+-  transaction phase:
+
+-  picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p insertstart=100001  -threads 16
+
+-  and this is the approach we used.
   
 1. to load a record count of 5000 to the manager node, we used this command: sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=5000 -threads 16 -p mongodb.url="mongodb://10.0.13.230:27017/ycsb_data_manager"
 
