@@ -174,8 +174,12 @@ uname -m
 
 ………
 Single Rpi
+loading phase
 
 administrator@raspberrypi:~/fe $ sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://192.168.1.52:27017/admin"
+
+transaction phaseadministrator@raspberrypi:~/fe $ sudo ./bin/ycsb run mongodb -s -P workloads/workloada  -p mongodb.url="mongodb://192.168.1.52:27017/admin" -p operationcount=100000 -threads 16
+
 …..
 Built docker swarem of 5 rpi
 
