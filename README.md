@@ -254,7 +254,18 @@ cqlsh> create table usertable (
     field8 varchar,
     
     field9 varchar);
+.........................
+note: updated
+for the workloads that have the insert operation:
+There is no need to change the command if you change the specific original workload files of ycsb with there record counts and operations counts
+and then use the regular command without the insert  at modifications to the command.
+for example change the record count to 100000 and the operation count to 100000 in the original workload file and then use this for the loading phase
 
+- picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+
+and this command for the transaction phase
+
+- picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd  -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p operationcount=100000 -threads 16
 
 
 Links:
