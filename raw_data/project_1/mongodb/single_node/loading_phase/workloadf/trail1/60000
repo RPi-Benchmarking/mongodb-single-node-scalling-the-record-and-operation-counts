@@ -1,0 +1,53 @@
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadf -p recordcount=60000 -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+java -cp /home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/mongodb-binding/conf:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/conf:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/mongodb-binding-0.17.0.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/core-0.17.0.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/slf4j-api-1.7.25.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/snappy-java-1.1.7.1.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/logback-core-1.1.2.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/mongodb-async-driver-2.0.1.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/logback-classic-1.1.2.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/mongo-java-driver-3.8.0.jar:/home/picocluster64/fe/ycsb-mongodb-binding-0.17.0/lib/HdrHistogram-2.1.4.jar site.ycsb.Client -db site.ycsb.db.MongoDbClient -s -P workloads/workloadf -p recordcount=60000 -threads 16 -p mongodb.url=mongodb://10.0.13.240:27017/admin -load
+Command line: -db site.ycsb.db.MongoDbClient -s -P workloads/workloadf -p recordcount=60000 -threads 16 -p mongodb.url=mongodb://10.0.13.240:27017/admin -load
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+2024-05-21 15:21:06:929 0 sec: 0 operations; est completion in 0 second
+mongo client connection created with mongodb://10.0.13.240:27017/admin
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2024-05-21 15:21:16:744 10 sec: 6950 operations; 694.79 current ops/sec; est completion in 1 minute [INSERT: Count=7075, Max=785919, Min=1357, Avg=16939.34, 90=24863, 99=48895, 99.9=765439, 99.99=780799]
+2024-05-21 15:21:26:741 20 sec: 28463 operations; 2151.95 current ops/sec; est completion in 23 seconds [INSERT: Count=21391, Max=62047, Min=929, Avg=7354.01, 90=13055, 99=22991, 99.9=38911, 99.99=57247]
+2024-05-21 15:21:36:741 30 sec: 51117 operations; 2265.4 current ops/sec; est completion in 6 second [INSERT: Count=22652, Max=257407, Min=874, Avg=7006.5, 90=12551, 99=22815, 99.9=47263, 99.99=131967]
+2024-05-21 15:21:40:593 33 sec: 60000 operations; 2305.48 current ops/sec; [CLEANUP: Count=16, Max=43743, Min=4, Avg=2739.81, 90=9, 99=43743, 99.9=43743, 99.99=43743] [INSERT: Count=8882, Max=116543, Min=837, Avg=5996.18, 90=10799, 99=18575, 99.9=83135, 99.99=100927]
+[OVERALL], RunTime(ms), 33853
+[OVERALL], Throughput(ops/sec), 1772.3687708622574
+[TOTAL_GCS_G1_Young_Generation], Count, 15
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 171
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.5051250996957434
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 15
+[TOTAL_GC_TIME], Time(ms), 171
+[TOTAL_GC_TIME_%], Time(%), 0.5051250996957434
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 2739.8125
+[CLEANUP], MinLatency(us), 4
+[CLEANUP], MaxLatency(us), 43743
+[CLEANUP], 95thPercentileLatency(us), 21
+[CLEANUP], 99thPercentileLatency(us), 43743
+[INSERT], Operations, 60000
+[INSERT], AverageLatency(us), 8152.081166666667
+[INSERT], MinLatency(us), 837
+[INSERT], MaxLatency(us), 785919
+[INSERT], 95thPercentileLatency(us), 18527
+[INSERT], 99thPercentileLatency(us), 29055
+[INSERT], Return=OK, 60000
