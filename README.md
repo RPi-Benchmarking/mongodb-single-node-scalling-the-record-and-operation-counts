@@ -1,6 +1,8 @@
 # master_thesis
+# Performance Evaluation of MongoDB Database in Edge-Cloud Environment
+
 This repo includes all the works that are related to my master thesis.
-in my master thesis, we benchmarked the MongoDB database with the YCSB tool as it suited the cloud environment. The experimental tests include a single node, a docker swarm of two nodes, and a docker swarm of five. Then we integrated FIWARE Orion with mongoDB. 
+in my master thesis, we benchmarked the MongoDB database with the YCSB tool as it suits the cloud environment. The experimental tests include a single node, a docker swarm of two nodes, and a docker swarm of five. Then we integrated FIWARE Orion with mongoDB. 
 we used Raspberry Pi, which simulates the edge device while the docker swarm simulates the cloud sittings.
 - One of the problems we encountered and solved successfully is that in workload D in the run phase, no insert happens as there are conflicts with the already loaded data in the loading phase. we solved the problem by using this command in the loading phase:
 
