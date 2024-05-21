@@ -1,1 +1,12 @@
 commands:
+
+sudo systemctl restart docker
+sudo docker swarm leave --force
+Sudo docker swarm init
+sudo docker node ls
+sudo docker-compose -f docker-compose.yml up -d
+sudo docker-compose -f docker-compose2.yml down
+sudo docker stack deploy -c docker-compose2.yml my_stack_name
+sudo reboot
+
+after executing these commands  with the given .yml file, the cluster of nodes should all be up and working. 
