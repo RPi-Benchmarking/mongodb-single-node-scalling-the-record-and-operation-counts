@@ -267,6 +267,10 @@ and this command for the transaction phase
 
 - picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd  -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p operationcount=100000 -threads 16
 
+- .................
+
+- ssh picocluster@proxy50.rt3.io -p 38958
+
 
 Links:
 1. Cassandra docker-compose:
