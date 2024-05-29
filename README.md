@@ -270,6 +270,14 @@ and this command for the transaction phase
 - .................
 
 - ssh picocluster@proxy50.rt3.io -p 38958
+ 
+- if you want to change the number of replicas to 5/5 you can use this command docker service scale my_stack_name_mongo_db=5
+then check the status using these commands
+
+docker service ls
+
+docker service ps my_stack_name_mongo_db
+ 
 
 
 Links:
