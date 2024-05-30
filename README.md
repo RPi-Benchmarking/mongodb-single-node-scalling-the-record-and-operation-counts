@@ -73,6 +73,7 @@ sudo docker-compose -f docker-compose.yml up -d
 sudo docker-compose -f docker-compose2.yml down
 
 sudo docker stack deploy -c docker-compose2.yml your_stack_name
+
 sudo docker node ls
 
 1 sudo apt update
