@@ -276,7 +276,15 @@ then check the status using these commands
 
 docker service ls
 
-docker service ps my_stack_name_mongo_db
+docker service ps my_stack_name_mongo_dbpicocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+
+................................
+
+loading phase:
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+
+transaction phase:
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://192.168.1.52:27017/admin" -threads 16
  
 
 
