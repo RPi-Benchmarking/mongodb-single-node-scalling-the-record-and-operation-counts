@@ -1,0 +1,73 @@
+version: '3.7'
+
+services:
+  mongo_db1:
+    image: mongo:4.2.12
+    ports:
+      - 27017:27017
+    volumes:
+      - /mnt/mongoData1:/data/db
+      - /mnt/mongoConfig1:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 1  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 1
+
+  mongo_express:
+    image: mongo-express:0.54.0
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=default
+      - ME_CONFIG_MONGODB_SERVER=mongo_db1
+      - ME_CONFIG_MONGODB_PORT=27017
+    ports:
+      - "8081:8081"
+    restart: on-failure
+    depends_on:
+      - mongo_db1
+
+
+mongo_db2:
+    image: mongo:4.2.12
+    ports:
+      - 27018:27017
+    volumes:
+      - /mnt/mongoData2:/data/db
+      - /mnt/mongoConfig2:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 2
+
+
+mongo_db3:
+    image: mongo:4.2.12
+    ports:
+      - 27019:27017
+    volumes:
+      - /mnt/mongoData3:/data/db
+      - /mnt/mongoConfig3:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 3
+
+
+volumes:
+  mongoData1:
+  mongoConfig1:
+  mongoData2:
+  mongoConfig2:
+  mongoData3:
+  mongoConfig3:
