@@ -1,0 +1,231 @@
+version: '3.7'
+
+services:
+  mongo_db1:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData1:/data/db
+      - /mnt/mongoConfig1:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 1  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 1
+
+  mongo_express:
+    image: mongo-express:0.54.0
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=default
+      - ME_CONFIG_MONGODB_SERVER=mongo_db1
+      - ME_CONFIG_MONGODB_PORT=27017
+    ports:
+      - "8081:8081"
+    restart: on-failure
+    depends_on:
+      - mongo_db1
+
+
+  mongo_db2:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData2:/data/db
+      - /mnt/mongoConfig2:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 2
+
+
+  mongo_db3:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData3:/data/db
+      - /mnt/mongoConfig3:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 3
+
+  mongo_db4:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData4:/data/db
+      - /mnt/mongoConfig4:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 3
+
+mongo_db5:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData5:/data/db
+      - /mnt/mongoConfig5:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 3
+
+mongo_db6:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData6:/data/db
+      - /mnt/mongoConfig6:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 3
+
+mongo_db7:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData7:/data/db
+      - /mnt/mongoConfig7:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 3
+
+mongo_db8:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData8:/data/db
+      - /mnt/mongoConfig8:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 3
+
+mongo_db9:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData9:/data/db
+      - /mnt/mongoConfig9:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 3
+
+mongo_db10:
+    image: mongo:4.2.12
+    command:["mongod","--replSet","test-rs"]
+    networks:
+      - mongo-net
+    ports:
+      - '27017'
+    volumes:
+      - /mnt/mongoData10:/data/db
+      - /mnt/mongoConfig10:/data/configdb
+    deploy:
+      mode: replicated
+      replicas: 2  # Adjust as needed for your Raspberry Pi nodes
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.mongo.replica == 3
+networks:
+  mongo-net:
+     external: true
+volumes:
+  mongoData1:
+  mongoConfig1:
+  mongoData2:
+  mongoConfig2:
+  mongoData3:
+  mongoConfig3:
+  mongoData4:
+  mongoConfig4:
+  mongoData5:
+  mongoConfig5:
+  mongoData6:
+  mongoConfig6:
+  mongoData7:
+  mongoConfig7:
+  mongoData8:
+  mongoConfig8:
+  mongoData9:
+  mongoConfig9:
+  mongoData10:
+  mongoConfig10:
