@@ -77,7 +77,9 @@ rs.reconfig(config)
 
 var config = rs.conf();
 
+
 // Modify the configuration as needed
+
 config.members = [
   { _id: 1, host: "mongo_db1:27017" },
   { _id: 2, host: "mongo_db2:27017" },
@@ -92,6 +94,7 @@ config.members = [
 ];
 
 // Reconfigure the replica set
+
 rs.reconfig(config)
 
 
