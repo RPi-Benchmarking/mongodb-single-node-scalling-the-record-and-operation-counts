@@ -98,6 +98,78 @@ config.members = [
 rs.reconfig(config)
 
 
+.........................
+
+
+test-rs:PRIMARY> // Reconfigure the replica set
+test-rs:PRIMARY> var config = rs.conf();
+test-rs:PRIMARY>
+test-rs:PRIMARY> // Modify the configuration as needed
+test-rs:PRIMARY>
+test-rs:PRIMARY> config.members = [ { _id: 1, host: "mongo_db1:27017" }, { _id: 2, host: "mongo_db2:27017" }, { _id: 3, host: "mongo_db3:27017" }, { _id: 4, host: "mongo_db4:27017" }, { _id: 5, host: "mongo_db5:27017" }, { _id: 6, host: "mongo_db6:27017" }, { _id: 7, host: "mongo_db7:27017" }, { _id: 8, host: "mongo_db8:27017"}, { _id: 9, host: "mongo_db9:27017"}, { _id: 10, host: "mongo_db10:27017"} ];
+[
+        {
+                "_id" : 1,
+                "host" : "mongo_db1:27017"
+        },
+        {
+                "_id" : 2,
+                "host" : "mongo_db2:27017"
+        },
+        {
+                "_id" : 3,
+                "host" : "mongo_db3:27017"
+        },
+        {
+                "_id" : 4,
+                "host" : "mongo_db4:27017"
+        },
+        {
+                "_id" : 5,
+                "host" : "mongo_db5:27017"
+        },
+        {
+                "_id" : 6,
+                "host" : "mongo_db6:27017"
+        },
+        {
+                "_id" : 7,
+                "host" : "mongo_db7:27017"
+        },
+        {
+                "_id" : 8,
+                "host" : "mongo_db8:27017"
+        },
+        {
+                "_id" : 9,
+                "host" : "mongo_db9:27017"
+        },
+        {
+                "_id" : 10,
+                "host" : "mongo_db10:27017"
+        }
+]
+test-rs:PRIMARY>
+test-rs:PRIMARY> // Reconfigure the replica set
+test-rs:PRIMARY>
+test-rs:PRIMARY> rs.reconfig(config)
+{
+        "operationTime" : Timestamp(1717621035, 1),
+        "ok" : 0,
+        "errmsg" : "Replica set configuration contains 10 voting members, but must be at least 1 and no more than 7",
+        "code" : 103,
+        "codeName" : "NewReplicaSetConfigurationIncompatible",
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1717621035, 1),
+                "signature" : {
+                        "hash" : BinData(0,"AAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+                        "keyId" : NumberLong(0)
+                }
+        }
+}
+test-rs:PRIMARY>
+
+
 
 
   
