@@ -207,6 +207,17 @@ rs.status();
 
 
 
+![image](https://github.com/SaraDanaKablTalabani/master_thesis/assets/101463904/3cc0420b-a0a5-4ac7-ac96-0c7bd93ca242)
+
+
+
+/////////////
+
+
+
+
+
+
 
 
   
