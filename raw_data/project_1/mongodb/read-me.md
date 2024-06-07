@@ -211,7 +211,17 @@ rs.status();
 
 
 
-/////////////
+......
+
+![image](https://github.com/SaraDanaKablTalabani/master_thesis/assets/101463904/1bae7ac2-dc38-453b-8361-0b6ddc2cee47)
+
+...........
+
+links
+1. https://github.com/yasasdy/mongodb-sharding
+2. 
+
+
 
 
 
