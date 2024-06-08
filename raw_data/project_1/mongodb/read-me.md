@@ -217,6 +217,24 @@ rs.status();
 
 ...........
 
+rs.initiate({
+  _id: "test-rs",
+  members: [
+    { _id: 1, host: "mongo_db1:27017" },
+    { _id: 2, host: "mongo_db2:27017" },
+    { _id: 3, host: "mongo_db3:27017" },
+    { _id: 4, host: "mongo_db4:27017" },
+    { _id: 5, host: "mongo_db5:27017" },
+    { _id: 6, host: "mongo_db6:27017" },
+    { _id: 7, host: "mongo_db7:27017" },
+    { _id: 8, host: "mongo_db8:27017", votes: 0, priority: 0 },
+    { _id: 9, host: "mongo_db9:27017", votes: 0, priority: 0 },
+    { _id: 10, host: "mongo_db10:27017", votes: 0, priority: 0 }
+  ]
+})
+
+.........................
+
 links
 1.https://www.mongodb.com/docs/manual/sharding/#:~:text=Sharding%20is%20a%20method%20for,capacity%20of%20a%20single%20server.
 
