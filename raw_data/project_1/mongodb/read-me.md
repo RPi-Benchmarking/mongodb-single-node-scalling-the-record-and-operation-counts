@@ -218,8 +218,9 @@ rs.status();
 ...........
 
 links
-1. https://github.com/yasasdy/mongodb-sharding
-2. 
+1.https://www.mongodb.com/docs/manual/sharding/#:~:text=Sharding%20is%20a%20method%20for,capacity%20of%20a%20single%20server.
+2. https://github.com/yasasdy/mongodb-sharding
+3. 
 
 
 
