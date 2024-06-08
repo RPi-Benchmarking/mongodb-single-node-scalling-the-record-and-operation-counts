@@ -235,6 +235,8 @@ rs.initiate({
 
 .........................
 
+rs.reconfig(config, { force: true })
+
 links
 1.https://www.mongodb.com/docs/manual/sharding/#:~:text=Sharding%20is%20a%20method%20for,capacity%20of%20a%20single%20server.
 
