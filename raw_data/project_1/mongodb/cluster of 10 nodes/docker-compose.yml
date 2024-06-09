@@ -8,9 +8,9 @@ services:
       - mongo-net
     ports:
       - 27017:27017
-    # volumes:
-    #   - /mnt/mongoData1:/data/db
-    #   - /mnt/mongoConfig1:/data/configdb
+    volumes:
+      - mongoData1:/data/db
+      - mongoConfig1:/data/configdb
     deploy:
       mode: replicated
       replicas: 1
@@ -32,6 +32,9 @@ services:
       - ME_CONFIG_MONGODB_PORT=27017
     ports:
       - "8081:8081"
+    volumes:
+       - mongoData2:/data/db
+       - mongoConfig2:/data/configdb
     deploy:
       mode: replicated
       replicas: 1
@@ -40,6 +43,7 @@ services:
         delay: 10s
       placement:
         constraints:
+          - node.labels.mongo.replica == 1
           - node.role == manager
     depends_on:
       - mongo_db1
@@ -51,12 +55,12 @@ services:
       - mongo-net
     ports:
       - 27018:27017
-    # volumes:
-    #   - /mnt/mongoData2:/data/db
-    #   - /mnt/mongoConfig2:/data/configdb
+    volumes:
+      - mongoData3:/data/db
+      - mongoConfig3:/data/configdb
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 2
         delay: 10s
@@ -72,12 +76,12 @@ services:
       - mongo-net
     ports:
       - 27019:27017
-    # volumes:
-    #   - /mnt/mongoData3:/data/db
-    #   - /mnt/mongoConfig3:/data/configdb
+    volumes:
+      - mongoData4:/data/db
+      - mongoConfig4:/data/configdb
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 2
         delay: 10s
@@ -93,12 +97,12 @@ services:
       - mongo-net
     ports:
       - 27020:27017
-    # volumes:
-    #   - /mnt/mongoData4:/data/db
-    #   - /mnt/mongoConfig4:/data/configdb
+    volumes:
+      - mongoData5:/data/db
+      - mongoConfig5:/data/configdb
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 2
         delay: 10s
@@ -114,12 +118,12 @@ services:
       - mongo-net
     ports:
       - 27021:27017
-    # volumes:
-    #   - /mnt/mongoData5:/data/db
-    #   - /mnt/mongoConfig5:/data/configdb
+    volumes:
+      - mongoData6:/data/db
+      - mongoConfig6:/data/configdb
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 2
         delay: 10s
@@ -135,15 +139,15 @@ services:
       - mongo-net
     ports:
       - 27022:27017
-    # volumes:
-    #   - /mnt/mongoData6:/data/db
-    #   - /mnt/mongoConfig6:/data/configdb
+    volumes:
+      - mongoData7:/data/db
+      - mongoConfig7:/data/configdb
     deploy:
       mode: replicated
       update_config:
         parallelism: 2
         delay: 10s
-      replicas: 2
+      replicas: 1
       placement:
         constraints:
           - node.labels.mongo.replica == 6
@@ -156,12 +160,12 @@ services:
       - mongo-net
     ports:
       - 27023:27017
-    # volumes:
-    #   - /mnt/mongoData7:/data/db
-    #   - /mnt/mongoConfig7:/data/configdb
+    volumes:
+      - mongoData8:/data/db
+      - mongoConfig8:/data/configdb
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 2
         delay: 10s
@@ -177,12 +181,12 @@ services:
       - mongo-net
     ports:
       - 27024:27017
-    # volumes:
-    #   - /mnt/mongoData8:/data/db
-    #   - /mnt/mongoConfig8:/data/configdb
+    volumes:
+      - mongoData9:/data/db
+      - mongoConfig9:/data/configdb
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 2
         delay: 10s
@@ -198,12 +202,12 @@ services:
       - mongo-net
     ports:
       - 27025:27017
-    # volumes:
-    #   - /mnt/mongoData9:/data/db
-    #   - /mnt/mongoConfig9:/data/configdb
+    volumes:
+      - mongoData10:/data/db
+      - mongoConfig10:/data/configdb
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 2
         delay: 10s
@@ -219,12 +223,12 @@ services:
       - mongo-net
     ports:
       - 27026:27017
-    # volumes:
-    #   - /mnt/mongoData10:/data/db
-    #   - /mnt/mongoConfig10:/data/configdb
+    volumes:
+      - mongoData11:/data/db
+      - mongoConfig11:/data/configdb
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 2
         delay: 10s
@@ -237,24 +241,26 @@ networks:
   mongo-net:
     external: true
 
-# volumes:
-#   mongoData1:
-#   mongoConfig1:
-#   mongoData2:
-#   mongoConfig2:
-#   mongoData3:
-#   mongoConfig3:
-#   mongoData4:
-#   mongoConfig4:
-#   mongoData5:
-#   mongoConfig5:
-#   mongoData6:
-#   mongoConfig6:
-#   mongoData7:
-#   mongoConfig7:
-#   mongoData8:
-#   mongoConfig8:
-#   mongoData9:
-#   mongoConfig9:
-#   mongoData10:
-#   mongoConfig10:
+volumes:
+  mongoData1:
+  mongoConfig1:
+  mongoData2:
+  mongoConfig2:
+  mongoData3:
+  mongoConfig3:
+  mongoData4:
+  mongoConfig4:
+  mongoData5:
+  mongoConfig5:
+  mongoData6:
+  mongoConfig6:
+  mongoData7:
+  mongoConfig7:
+  mongoData8:
+  mongoConfig8:
+  mongoData9:
+  mongoConfig9:
+  mongoData10:
+  mongoConfig10:
+  mongoData11:
+  mongoConfig11:
