@@ -92,4 +92,9 @@ sudo docker node update --label-add rack=9 pc8
 
 sudo docker node update --label-add rack=10 pc9
 
+.............
+
+rs.add({ host: "52ee8fdbbea9:27017", priority: 0, votes: 0 })
+
+
 
