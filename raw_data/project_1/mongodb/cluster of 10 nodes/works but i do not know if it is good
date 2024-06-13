@@ -1,0 +1,57 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:4.2.12
+    command: ["mongod", "--replSet", "test-rs", "--bind_ip_all"]
+    networks:
+      - mongo-net
+    volumes:
+      - mongoData:/data/db
+      - mongoConfig:/data/configdb
+    deploy:
+      mode: global
+      update_config:
+        parallelism: 2
+        delay: 10s
+      resources:
+        reservations:
+          cpus: '1.0'
+          memory: '512M'
+      placement:
+        preferences:
+          - spread: node.labels.rack
+
+  mongo_express:
+    image: mongo-express:0.54.0
+    networks:
+      - mongo-net
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=default
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+      resources:
+        reservations:
+          cpus: '0.5'
+          memory: '256M'
+      placement:
+        constraints:
+          - node.labels.role == manager
+
+networks:
+  mongo-net:
+    external: true
+
+volumes:
+  mongoData:
+  mongoConfig:
