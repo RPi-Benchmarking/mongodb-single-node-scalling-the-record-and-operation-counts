@@ -96,6 +96,31 @@ sudo docker node update --label-add rack=10 pc9
 
 rs.add({ host: "52ee8fdbbea9:27017", priority: 0, votes: 0 })
  rs.add("dc199b4c25d7:27017")
+.............
+labeling of 9/9
+
+sudo docker node update --label-add role=manager pc0
+sudo docker node update --label-add role=worker pc1
+sudo docker node update --label-add role=worker pc2
+sudo docker node update --label-add role=worker pc3
+sudo docker node update --label-add role=worker pc4
+sudo docker node update --label-add role=worker pc20
+sudo docker node update --label-add role=worker pc21
+sudo docker node update --label-add role=worker pc22
+sudo docker node update --label-add role=worker pc23
+sudo docker node update --label-add role=worker pc24
+
+
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack1 pc0
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack2 pc1
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack2 pc2
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack3 pc3
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack3 pc4
+sudo docker node update --label-add datacenter=dc2 --label-add rack=rack1 pc20
+sudo docker node update --label-add datacenter=dc2 --label-add rack=rack2 pc21
+sudo docker node update --label-add datacenter=dc2 --label-add rack=rack2 pc22
+sudo docker node update --label-add datacenter=dc2 --label-add rack=rack3 pc23
+sudo docker node update --label-add datacenter=dc2 --label-add rack=rack3 pc24
 
 
 
