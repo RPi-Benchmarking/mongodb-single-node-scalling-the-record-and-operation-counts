@@ -287,6 +287,25 @@ picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongod
 transaction phase:
 picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://10.0.13.240:27017/admin" -threads 16
 
+............
+
+Clean up unused
+sudo docker network prune
+
+sudo docker volume prune
+
+sudo docker container prune
+
+sudo docker image prune
+
+sudo docker image prune -a
+
+sudo docker images
+
+
+
+
+
 
 Links:
 1. Cassandra docker-compose:
