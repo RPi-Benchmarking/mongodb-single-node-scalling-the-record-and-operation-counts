@@ -32,6 +32,9 @@ sudo docker network create --driver overlay proxy
 
 sudo docker network ls
 
+sudo docker network create --driver overlay --attachable mongo-net
+
+
 ............
 
 for the bash 
