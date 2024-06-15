@@ -97,7 +97,7 @@ sudo docker node update --label-add rack=10 pc9
 rs.add({ host: "52ee8fdbbea9:27017", priority: 0, votes: 0 })
  rs.add("dc199b4c25d7:27017")
 .............
-labeling of 9/9
+labeling of global and replica mode 9/9 and 9/10 respectively.
 
 sudo docker node update --label-add role=manager pc0
 sudo docker node update --label-add role=worker pc1
