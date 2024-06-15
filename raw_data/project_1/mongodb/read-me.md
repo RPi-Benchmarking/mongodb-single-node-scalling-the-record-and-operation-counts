@@ -34,6 +34,22 @@ sudo docker network ls
 
 sudo docker network create --driver overlay --attachable mongo-net
 
+ sudo docker service ls
+
+ sudo nano docker-compose.yml
+
+ sudo cat docker-compose.yml
+
+  sudo docker exec -it c55 /bin/bash
+
+  mongo
+
+  rs.initiate()
+
+  
+
+  
+
 
 ............
 
