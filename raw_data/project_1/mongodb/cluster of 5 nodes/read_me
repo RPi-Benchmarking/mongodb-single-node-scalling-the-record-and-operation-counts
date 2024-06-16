@@ -12,8 +12,17 @@ sudo reboot
 after executing these commands  with the given .yml file, the cluster of nodes should all be up and working. 
 
 .............
-labeling
+labeling placement constraints
 
 docker node update --label-add mongo=replica <worker-node-id>
 
 docker node update --label-add mongo=manager <manager-node-id>
+
+.................
+
+labeling placement preferences
+
+docker node update --label-add rack=1 --label-add datacenter=us-east <node-id>
+docker node update --label-add rack=2 --label-add datacenter=us-west <node-id>
+
+
