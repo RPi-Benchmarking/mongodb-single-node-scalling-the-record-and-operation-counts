@@ -18,6 +18,19 @@ docker node update --label-add mongo=replica <worker-node-id>
 
 docker node update --label-add mongo=manager <manager-node-id>
 
+ sudo docker node update --label-add mongo=manager pc0
+
+sudo docker node update --label-add mongo=replica pc0
+
+sudo docker node update --label-add mongo=replica pc1
+
+sudo docker node update --label-add mongo=replica pc2
+
+sudo docker node update --label-add mongo=replica pc3
+
+sudo docker node update --label-add mongo=replica pc4
+
+
 .................
 
 labeling placement preferences
