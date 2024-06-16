@@ -25,4 +25,16 @@ labeling placement preferences
 docker node update --label-add rack=1 --label-add datacenter=us-east <node-id>
 docker node update --label-add rack=2 --label-add datacenter=us-west <node-id>
 
+...........
+
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack1 pc0
+
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack2 pc1
+
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack2 pc2
+
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack3 pc3
+
+sudo docker node update --label-add datacenter=dc1 --label-add rack=rack3 pc4
+
 
