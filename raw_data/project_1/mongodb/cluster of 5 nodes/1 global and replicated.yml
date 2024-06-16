@@ -16,9 +16,6 @@ services:
       update_config:
         parallelism: 2
         delay: 10s
-      placement:
-        constraints:
-          - node.role == worker
 
   mongo_express:
     image: mongo-express:0.54.0
@@ -49,3 +46,4 @@ networks:
 volumes:
   mongoData:
   mongoConfig:
+
