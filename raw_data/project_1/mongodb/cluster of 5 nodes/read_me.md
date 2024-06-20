@@ -50,4 +50,7 @@ sudo docker node update --label-add datacenter=dc1 --label-add rack=rack3 pc3
 
 sudo docker node update --label-add datacenter=dc1 --label-add rack=rack3 pc4
 
+...........
+
+mongo -u admin -p password --authenticationDatabase admin
 
