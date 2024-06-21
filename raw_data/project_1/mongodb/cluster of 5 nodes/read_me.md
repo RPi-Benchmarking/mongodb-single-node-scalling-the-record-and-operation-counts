@@ -56,8 +56,11 @@ mongo -u admin -p password --authenticationDatabase admin
 
 use admin
 
+db.getUser("admin")
+
+use admin
+
 db.updateUser("admin", { roles: [ { role: "root", db: "admin" } ] })
 
-db.getUser("admin")
 
 
