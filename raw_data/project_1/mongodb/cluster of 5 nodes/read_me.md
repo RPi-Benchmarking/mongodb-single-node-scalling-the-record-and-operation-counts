@@ -58,4 +58,6 @@ use admin
 
 db.updateUser("admin", { roles: [ { role: "root", db: "admin" } ] })
 
+db.getUser("admin")
+
 
