@@ -66,6 +66,13 @@ db.updateUser("admin", { roles: [ { role: "root", db: "admin" } ] })
 
 db.createUser({user: 'admin', pwd: 'password', roles: [{role:"root", db:"admin"}]})
 
+ var config = {     _id: "test-rs",     members: [         { _id: 0, host: "3b51fe37bab2:27017" },         { _id: 1, host: "81b2968a181c:27017" }, { _id: 2, host: "2afba2644b9d:27017" }     ] };
+
+rs.reconfig(config, { force: true });
+![image](https://github.com/SaraDanaKablTalabani/master_thesis/assets/101463904/4989aa79-6483-4944-846f-2e5b86865fda)
+
+ 
+![image](https://github.com/SaraDanaKablTalabani/master_thesis/assets/101463904/6a541593-b777-4339-9832-c1e75a3cc3c5)
 
 
 
