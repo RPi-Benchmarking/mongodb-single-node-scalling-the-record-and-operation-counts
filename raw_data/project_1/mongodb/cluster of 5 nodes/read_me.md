@@ -74,6 +74,9 @@ rs.reconfig(config, { force: true });
  
 ![image](https://github.com/SaraDanaKablTalabani/master_thesis/assets/101463904/6a541593-b777-4339-9832-c1e75a3cc3c5)
 
+links:
+
+1. https://github.com/smartsdk/mongo-rs-controller-swarm
 
 
 
