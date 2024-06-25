@@ -1,0 +1,95 @@
+version: '3.7'
+
+services:
+  mongo_db:
+    image: mongo:4.2.12
+    command: ["mongod", "--replSet", "test-rs"]
+#    command: ["mongod", "--replSet", "test-rs"]
+    networks:
+      - mongo-net
+#    ports:
+ #     - 27017:27017
+    volumes:
+ #     - mongoData:/data/db
+      #- mongoConfig:/data/configdb
+      - /C/Mine/mongoData:/data/db
+      #- /C/Mine/mongoConfig:/data/configdb
+#      - /scripts
+#    restart: on-failure
+    deploy:
+      endpoint_mode: dnsrr
+      mode: global
+      #resources:
+        #limits:
+          #memory: 4G
+          #cpus: '4.5'
+        #reservations:
+          #memory: 3G
+          #cpus: '3.5'
+      #update_config:
+       # parallelism: 2
+        #delay: 10s
+      #placement:
+       # constraints:
+          #- node.platform.arch == arm
+          #- node.platform.os == linux
+        #  - node.labels.mongo == replica
+          #- node.role == manager
+          #- node.role == worker
+        #preferences:
+         # - spread: node.labels.rack
+          #- spread: node.labels.datacenter
+
+  mongo_express:
+    image: mongo-express:0.54.0
+    #command: ["mongod", "--replSet", "test-rs"]
+    networks:
+      - mongo-net
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=default
+      - ME_CONFIG_MONGODB_SERVER=mongo_db
+      - ME_CONFIG_MONGODB_PORT=27017
+#      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+
+#    - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+
+     # - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+     # - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+     # - ME_CONFIG_MONGODB_REPLSET_NAME=test-rs
+     # - ME_CONFIG_BASICAUTH_USERNAME=admin
+      #- ME_CONFIG_BASICAUTH_PASSWORD=password
+    ports:
+      - "8081:8081"
+    deploy:
+#      mode: replicated
+ #     replicas: 1
+      #resources:
+       # limits:
+        #  memory: 2G
+         # cpus: '4.5'
+        #reservations:
+         # memory: 256M
+          #cpus: '4.25'
+  #    update_config:
+   #     parallelism: 2
+    #    delay: 10s
+      placement:
+        constraints:
+     #     - node.labels.mongo.replica == 1
+          - node.role == manager
+          #- node.platform.arch == arm
+ #         - node.platform.os == linux
+  #        - node.labels.mongo == manager
+        #preferences:
+       #   - spread: node.labels.rack
+        #  - spread: node.labels.datacenter
+    depends_on:
+      - mongo_db
+
+networks:
+  mongo-net:
+    external: true
+
+#volumes:
+ # mongoData:
+  #mongoConfig:
