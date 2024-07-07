@@ -4,5 +4,7 @@ sudo docker run -d arangodb/arangodb-starter     --starter.address=10.0.13.242  
 
 arangosh --server.endpoint tcp://10.0.13.240:8529 --server.username root --server.password rootpassword
 
+links:
+https://github.com/Dumstruck/arango-swarm
 
 
