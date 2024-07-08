@@ -6,5 +6,6 @@ arangosh --server.endpoint tcp://10.0.13.240:8529 --server.username root --serve
 
 links:
 https://github.com/Dumstruck/arango-swarm
+https://github.com/arangodb/arangodb/issues/4602
 
 
