@@ -1,0 +1,138 @@
+version: '3.7'
+
+services:
+  arangodb_agent1:
+    image: arangodb/arangodb:3.12.0.2
+    command: ["arangodb", "--starter.join", "arangodb_agent1,arangodb_agent2,arangodb_agent3"]
+    networks:
+      - arango-net
+    ports:
+      - "8528:8528"
+    #volumes:
+     # - arangoAgentData1:/data
+    volumes:
+      - arangodb_data_container:/var/lib/arangodb3
+      - arangodb_apps_data_container:/var/lib/arangodb3-apps
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      placement:
+        constraints:
+          - node.labels.arango.role == agent
+          - node.role == manager
+
+  arangodb_agent2:
+    image: arangodb/arangodb:3.12.0.2
+    command: ["arangodb", "--starter.join", "arangodb_agent1,arangodb_agent2,arangodb_agent3"]
+    networks:
+      - arango-net
+    ports:
+      - "8530:8528"
+    #volumes:
+     # - arangoAgentData2:/data
+    volumes:
+      - arangodb_data_container2:/var/lib/arangodb3
+      - arangodb_apps_data_container2:/var/lib/arangodb3-apps
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      placement:
+        constraints:
+          - node.labels.arango.role == agent2
+          - node.role == worker
+
+  arangodb_agent3:
+    image: arangodb/arangodb:3.12.0.2
+    command: ["arangodb", "--starter.join", "arangodb_agent1,arangodb_agent2,arangodb_agent3"]
+    networks:
+      - arango-net
+    ports:
+      - "8532:8528"
+    #volumes:
+      #- arangoAgentData3:/data
+    volumes:
+      - arangodb_data_container3:/var/lib/arangodb3
+      - arangodb_apps_data_container3:/var/lib/arangodb3-apps
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      placement:
+        constraints:
+          - node.labels.arango.role == agent3
+          - node.role == worker
+
+  arangodb_coordinator:
+    image: arangodb/arangodb:3.12.0.2
+    command: ["arangodb", "--starter.join", "arangodb_agent1,arangodb_agent2,arangodb_agent3"]
+    networks:
+      - arango-net
+    environment:
+      ARANGO_ROOT_PASSWORD: rootpassword
+    ports:
+      - "8529:8529"
+#    volumes:
+ #     - arangoCoordData:/data
+    volumes:
+      - arangodb_data_container4:/var/lib/arangodb3
+      - arangodb_apps_data_container4:/var/lib/arangodb3-apps
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      placement:
+        constraints:
+          - node.role == manager
+
+  arangodb_dbserver:
+    image: arangodb/arangodb:3.12.0.2
+    command: ["arangodb", "--starter.join", "arangodb_agent1,arangodb_agent2,arangodb_agent3"]
+    networks:
+      - arango-net
+    ports:
+      - "8549:8549"
+   # volumes:
+    #  - arangoDbserverData:/data
+    volumes:
+      - arangodb_data_container5:/var/lib/arangodb3
+      - arangodb_apps_data_container5:/var/lib/arangodb3-apps
+    deploy:
+      mode: replicated
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 10s
+      placement:
+        constraints:
+          - node.role == worker
+
+networks:
+  arango-net:
+    external: true
+
+volumes:
+  #arangoAgentData1:
+  #arangoAgentData2:
+  #arangoAgentData3:
+  #arangoCoordData:
+  #arangoDbserverData:
+  arangodb_data_container:
+  arangodb_apps_data_container:
+  arangodb_data_container2:
+  arangodb_apps_data_container2:
+  arangodb_data_container3:
+  arangodb_apps_data_container3:
+  arangodb_data_container4:
+  arangodb_apps_data_container4:
+  arangodb_data_container5:
+  arangodb_apps_data_container5:
