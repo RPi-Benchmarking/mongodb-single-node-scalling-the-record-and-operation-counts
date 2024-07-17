@@ -1,0 +1,57 @@
+version: '3.7'
+
+services:
+  arangodb_agent1:
+    image: arangodb/arangodb:3.12.0.2
+    environment:
+      - ARANGO_ROOT_PASSWORD=rootpassword
+      - ARANGO_NO_AUTH=1
+    command: arangod --server.authentication false --server.endpoint tcp://0.0.0.0:8529 --agency.my-address tcp://10.0.13.240:5001 --agency.endpoint tcp://10.0.13.240:5001 --agency.size 1 --agency.activate true --agency.supervision true
+    ports:
+      - "5001:8529"
+    volumes:
+      - arangodb_data_container:/var/lib/arangodb3
+      - arangodb_apps_data_container:/var/lib/arangodb3-apps
+    networks:
+      - backend
+
+  arangodb_dbserver1:
+    image: arangodb/arangodb:3.12.0.2
+    environment:
+      - ARANGO_ROOT_PASSWORD=rootpassword
+      - ARANGO_NO_AUTH=1
+    command: arangod --server.authentication false --server.endpoint tcp://0.0.0.0:8529 --cluster.my-address tcp://10.0.13.240:6001 --cluster.my-role DBSERVER --cluster.agency-endpoint tcp://10.0.13.240:5001
+    ports:
+      - "6001:8529"
+    volumes:
+      - arangodb_data_container:/var/lib/arangodb3
+      - arangodb_apps_data_container:/var/lib/arangodb3-apps
+    networks:
+      - backend
+    depends_on:
+      - arangodb_agent1
+
+  arangodb_coordinator1:
+    image: arangodb/arangodb:3.12.0.2
+    environment:
+      - ARANGO_ROOT_PASSWORD=rootpassword
+      - ARANGO_NO_AUTH=1
+    command: arangod --server.authentication false --server.endpoint tcp://0.0.0.0:8529 --cluster.my-address tcp://10.0.13.240:7001 --cluster.my-role COORDINATOR --cluster.agency-endpoint tcp://10.0.13.240:5001 --cluster.system-replication-factor 1
+    ports:
+      - "7001:8529"
+    volumes:
+      - arangodb_data_container:/var/lib/arangodb3
+      - arangodb_apps_data_container:/var/lib/arangodb3-apps
+    networks:
+      - backend
+    depends_on:
+      - arangodb_agent1
+      - arangodb_dbserver1
+
+networks:
+  backend:
+    external: true
+
+volumes:
+  arangodb_data_container:
+  arangodb_apps_data_container:
