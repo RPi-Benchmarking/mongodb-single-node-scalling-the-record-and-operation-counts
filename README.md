@@ -226,34 +226,21 @@ sudo ./bin/ycsb run cassandra-cql -s -P workloads/workloada -p operationcount=50
 
 we need to make the database and the corresponding table for each record count load as follows:
 
-cqlsh> create keyspace ycsb
-
-    WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 3 };
+cqlsh> create keyspace ycsb WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 6 };
     
 cqlsh> USE ycsb;
 
 cqlsh> create table usertable (
-
-    y_id varchar primary key,
-    
-    field0 varchar,
-    
-    field1 varchar,
-    
-    field2 varchar,
-    
-    field3 varchar,
-    
-    field4 varchar,
-    
-    field5 varchar,
-    
-    field6 varchar,
-    
-    field7 varchar,
-    
-    field8 varchar,
-    
+    y_id varchar primary key,    
+    field0 varchar,    
+    field1 varchar,    
+    field2 varchar,    
+    field3 varchar,    
+    field4 varchar,    
+    field5 varchar,    
+    field6 varchar,    
+    field7 varchar,    
+    field8 varchar,    
     field9 varchar);
 .........................
 note: updated
