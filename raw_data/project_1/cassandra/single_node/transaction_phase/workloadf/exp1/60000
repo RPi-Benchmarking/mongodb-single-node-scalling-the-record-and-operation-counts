@@ -1,0 +1,76 @@
+picocluster64@pc24:~/fe5/ycsb-cassandra-binding-0.17.0 $ sudo ./bin/ycsb run cassandra-cql -s -P workloads/workloadf -threads 16 -p hosts="10.0.13.234" -p port=9042 -p cassandra.username=admin -p cassandra.password=admin
+java -cp /home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/cassandra-binding/conf:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/conf:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/netty-handler-4.0.33.Final.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/slf4j-api-1.7.25.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/cassandra-driver-core-3.0.0.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/netty-buffer-4.0.33.Final.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/netty-transport-4.0.33.Final.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/core-0.17.0.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/guava-16.0.1.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/metrics-core-3.1.2.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/netty-codec-4.0.33.Final.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/netty-common-4.0.33.Final.jar:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/cassandra-binding-0.17.0.jar site.ycsb.Client -db site.ycsb.db.CassandraCQLClient -s -P workloads/workloadf -threads 16 -p hosts=10.0.13.234 -p port=9042 -p cassandra.username=admin -p cassandra.password=admin -t
+Command line: -db site.ycsb.db.CassandraCQLClient -s -P workloads/workloadf -threads 16 -p hosts=10.0.13.234 -p port=9042 -p cassandra.username=admin -p cassandra.password=admin -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2024-08-28 13:15:56:659 0 sec: 0 operations; est completion in 0 second
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.PlatformDependent0 (file:/home/picocluster64/fe5/ycsb-cassandra-binding-0.17.0/lib/netty-common-4.0.33.Final.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.PlatformDependent0
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Aug 28, 2024 1:15:57 PM io.netty.util.internal.PlatformDependent <clinit>
+INFO: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2024-08-28 13:16:06:491 10 sec: 4280 operations; 427.87 current ops/sec; est completion in 2 minutes [READ: Count=4299, Max=278783, Min=2894, Avg=18754.91, 90=28575, 99=58687, 99.9=274431, 99.99=278783] [READ-MODIFY-WRITE: Count=2229, Max=370175, Min=10552, Avg=37172.04, 90=58719, 99=101311, 99.9=345855, 99.99=370175] [UPDATE: Count=2241, Max=274431, Min=5572, Avg=18637.97, 90=29359, 99=57631, 99.9=271615, 99.99=274431]
+2024-08-28 13:16:16:487 20 sec: 16333 operations; 1205.66 current ops/sec; est completion in 54 seconds [READ: Count=12038, Max=78271, Min=1679, Avg=8753.11, 90=15911, 99=27391, 99.9=37215, 99.99=51775] [READ-MODIFY-WRITE: Count=5944, Max=78463, Min=4164, Avg=17819.8, 90=31007, 99=46015, 99.9=61983, 99.99=71103] [UPDATE: Count=5940, Max=68223, Min=1613, Avg=8975.64, 90=16175, 99=28351, 99.9=37407, 99.99=44191]
+2024-08-28 13:16:26:487 30 sec: 42238 operations; 2590.5 current ops/sec; est completion in 13 seconds [READ: Count=25906, Max=119935, Min=1498, Avg=4069.86, 90=5539, 99=10495, 99.9=20559, 99.99=119423] [READ-MODIFY-WRITE: Count=12957, Max=126271, Min=3312, Avg=8240.91, 90=10679, 99=18895, 99.9=35743, 99.99=124735] [UPDATE: Count=12954, Max=120127, Min=1450, Avg=4160.77, 90=5707, 99=10711, 99.9=18975, 99.99=119551]
+2024-08-28 13:16:36:124 39 sec: 60000 operations; 1843.3 current ops/sec; [READ: Count=17757, Max=31439, Min=1075, Avg=4323.08, 90=6331, 99=11759, 99.9=24303, 99.99=30015] [READ-MODIFY-WRITE: Count=8814, Max=40479, Min=2023, Avg=8792.3, 90=12575, 99=22127, 99.9=33567, 99.99=36959] [CLEANUP: Count=16, Max=2244607, Min=7, Avg=140233.81, 90=14, 99=2244607, 99.9=2244607, 99.99=2244607] [UPDATE: Count=8809, Max=32927, Min=932, Avg=4441.28, 90=6511, 99=12079, 99.9=25535, 99.99=30991]
+[OVERALL], RunTime(ms), 39636
+[OVERALL], Throughput(ops/sec), 1513.7753557372087
+[TOTAL_GCS_G1_Young_Generation], Count, 13
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 116
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.29266323544252704
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 13
+[TOTAL_GC_TIME], Time(ms), 116
+[TOTAL_GC_TIME_%], Time(%), 0.29266323544252704
+[READ], Operations, 60000
+[READ], AverageLatency(us), 6136.598
+[READ], MinLatency(us), 1075
+[READ], MaxLatency(us), 278783
+[READ], 95thPercentileLatency(us), 16431
+[READ], 99thPercentileLatency(us), 27743
+[READ], Return=OK, 60000
+[READ-MODIFY-WRITE], Operations, 29944
+[READ-MODIFY-WRITE], AverageLatency(us), 12458.259851723216
+[READ-MODIFY-WRITE], MinLatency(us), 2023
+[READ-MODIFY-WRITE], MaxLatency(us), 370175
+[READ-MODIFY-WRITE], 95thPercentileLatency(us), 32831
+[READ-MODIFY-WRITE], 99thPercentileLatency(us), 54751
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 140233.8125
+[CLEANUP], MinLatency(us), 7
+[CLEANUP], MaxLatency(us), 2244607
+[CLEANUP], 95thPercentileLatency(us), 24
+[CLEANUP], 99thPercentileLatency(us), 2244607
+[UPDATE], Operations, 29944
+[UPDATE], AverageLatency(us), 6281.889092973551
+[UPDATE], MinLatency(us), 932
+[UPDATE], MaxLatency(us), 274431
+[UPDATE], 95thPercentileLatency(us), 16863
+[UPDATE], 99thPercentileLatency(us), 28879
+[UPDATE], Return=OK, 29944
+picocluster64@pc24:~/fe5/ycsb-cassandra-binding-0.17.0 $
