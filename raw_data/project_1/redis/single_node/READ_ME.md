@@ -14,4 +14,8 @@ after loading 60000 record counts:
 
 ![image](https://github.com/user-attachments/assets/8038b159-2dd9-4762-83b9-ccdc2e19c940)
 
+for deploying redis on one node use this command:
+
+sudo docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+
 
