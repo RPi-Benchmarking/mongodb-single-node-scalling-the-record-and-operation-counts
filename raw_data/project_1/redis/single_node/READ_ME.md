@@ -6,3 +6,12 @@ the command to load the data:
 
 transaction phase:
 ./bin/ycsb run redis -s -P workloads/workloada -p "redis.host=localhost" -p "redis.port=6379"
+ REDIS web interface:
+ 
+ ![image](https://github.com/user-attachments/assets/d35ef5b3-fe8f-4b5f-81c1-e27bdf3678b0)
+
+after loading 60000 record counts:
+
+![image](https://github.com/user-attachments/assets/8038b159-2dd9-4762-83b9-ccdc2e19c940)
+
+
