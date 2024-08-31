@@ -1,0 +1,43 @@
+picocluster64@pc24:~/ycsb-redis-binding-0.17.0 $ ./bin/ycsb run redis -s -P workloads/workloada -p "redis.host=localhost" -p "redis.port=6379"
+java -cp /home/picocluster64/ycsb-redis-binding-0.17.0/redis-binding/conf:/home/picocluster64/ycsb-redis-binding-0.17.0/conf:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/redis-binding-0.17.0.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/commons-pool2-2.4.2.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/jedis-2.9.0.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/core-0.17.0.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/jackson-mapper-asl-1.9.4.jar site.ycsb.Client -db site.ycsb.db.RedisClient -s -P workloads/workloada -p redis.host=localhost -p redis.port=6379 -t
+Command line: -db site.ycsb.db.RedisClient -s -P workloads/workloada -p redis.host=localhost -p redis.port=6379 -t
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2024-09-01 00:53:43:716 0 sec: 0 operations; est completion in 0 second
+2024-09-01 00:53:53:566 10 sec: 27161 operations; 2715.56 current ops/sec; est completion in 16 seconds [READ: Count=13580, Max=20735, Min=189, Avg=319.49, 90=484, 99=997, 99.9=2177, 99.99=9727] [UPDATE: Count=13611, Max=23711, Min=190, Avg=353.2, 90=587, 99=1098, 99.9=2721, 99.99=8999]
+2024-09-01 00:54:03:160 19 sec: 70000 operations; 4464.72 current ops/sec; [READ: Count=21524, Max=5631, Min=182, Avg=216.03, 90=245, 99=357, 99.9=737, 99.99=3343] [CLEANUP: Count=1, Max=1622, Min=1622, Avg=1622, 90=1622, 99=1622, 99.9=1622, 99.99=1622] [UPDATE: Count=21285, Max=3085, Min=183, Avg=219.04, 90=251, 99=349, 99.9=812, 99.99=2055]
+[OVERALL], RunTime(ms), 19597
+[OVERALL], Throughput(ops/sec), 3571.9753023421954
+[TOTAL_GCS_G1_Young_Generation], Count, 4
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 23
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.11736490279124355
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 4
+[TOTAL_GC_TIME], Time(ms), 23
+[TOTAL_GC_TIME_%], Time(%), 0.11736490279124355
+[READ], Operations, 35104
+[READ], AverageLatency(us), 256.0551219234275
+[READ], MinLatency(us), 182
+[READ], MaxLatency(us), 20735
+[READ], 95thPercentileLatency(us), 442
+[READ], 99thPercentileLatency(us), 821
+[READ], Return=OK, 35104
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 1622.0
+[CLEANUP], MinLatency(us), 1622
+[CLEANUP], MaxLatency(us), 1622
+[CLEANUP], 95thPercentileLatency(us), 1622
+[CLEANUP], 99thPercentileLatency(us), 1622
+[UPDATE], Operations, 34896
+[UPDATE], AverageLatency(us), 271.3719337459881
+[UPDATE], MinLatency(us), 183
+[UPDATE], MaxLatency(us), 23711
+[UPDATE], 95thPercentileLatency(us), 533
+[UPDATE], 99thPercentileLatency(us), 903
+[UPDATE], Return=OK, 34896
+picocluster64@pc24:~/ycsb-redis-binding-0.17.0 $
