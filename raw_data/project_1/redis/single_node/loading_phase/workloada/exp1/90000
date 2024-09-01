@@ -1,0 +1,39 @@
+picocluster64@pc24:~/ycsb-redis-binding-0.17.0 $ ./bin/ycsb load redis -s -P workloads/workloada -p "redis.host=localhost" -p "redis.port=6379"
+java -cp /home/picocluster64/ycsb-redis-binding-0.17.0/redis-binding/conf:/home/picocluster64/ycsb-redis-binding-0.17.0/conf:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/redis-binding-0.17.0.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/commons-pool2-2.4.2.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/jedis-2.9.0.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/core-0.17.0.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/picocluster64/ycsb-redis-binding-0.17.0/lib/jackson-mapper-asl-1.9.4.jar site.ycsb.Client -db site.ycsb.db.RedisClient -s -P workloads/workloada -p redis.host=localhost -p redis.port=6379 -load
+Command line: -db site.ycsb.db.RedisClient -s -P workloads/workloada -p redis.host=localhost -p redis.port=6379 -load
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2024-09-01 11:14:57:372 0 sec: 0 operations; est completion in 0 second
+2024-09-01 11:15:07:202 10 sec: 15370 operations; 1536.54 current ops/sec; est completion in 49 seconds [INSERT: Count=15372, Max=28687, Min=399, Avg=608.83, 90=988, 99=1682, 99.9=3251, 99.99=7591]
+2024-09-01 11:15:17:199 20 sec: 36648 operations; 2128.44 current ops/sec; est completion in 30 seconds [INSERT: Count=21276, Max=9751, Min=396, Avg=460.4, 90=481, 99=1246, 99.9=2403, 99.99=6911]
+2024-09-01 11:15:27:199 30 sec: 57917 operations; 2126.9 current ops/sec; est completion in 17 seconds [INSERT: Count=21270, Max=7043, Min=394, Avg=462.39, 90=501, 99=635, 99.9=1240, 99.99=6459]
+2024-09-01 11:15:37:199 40 sec: 78543 operations; 2062.6 current ops/sec; est completion in 6 second [INSERT: Count=20626, Max=9503, Min=394, Avg=478.61, 90=561, 99=728, 99.9=1807, 99.99=6239]
+2024-09-01 11:15:42:489 45 sec: 90000 operations; 2165.78 current ops/sec; [CLEANUP: Count=1, Max=2535, Min=2534, Avg=2535, 90=2535, 99=2535, 99.9=2535, 99.99=2535] [INSERT: Count=11456, Max=7155, Min=395, Avg=455.83, 90=509, 99=719, 99.9=1342, 99.99=6983]
+[OVERALL], RunTime(ms), 45290
+[OVERALL], Throughput(ops/sec), 1987.1936409803488
+[TOTAL_GCS_G1_Young_Generation], Count, 13
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 76
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.16780746301611835
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 13
+[TOTAL_GC_TIME], Time(ms), 76
+[TOTAL_GC_TIME_%], Time(%), 0.16780746301611835
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 2535.0
+[CLEANUP], MinLatency(us), 2534
+[CLEANUP], MaxLatency(us), 2535
+[CLEANUP], 95thPercentileLatency(us), 2535
+[CLEANUP], 99thPercentileLatency(us), 2535
+[INSERT], Operations, 90000
+[INSERT], AverageLatency(us), 489.8118
+[INSERT], MinLatency(us), 394
+[INSERT], MaxLatency(us), 28687
+[INSERT], 95thPercentileLatency(us), 707
+[INSERT], 99thPercentileLatency(us), 1223
+[INSERT], Return=OK, 90000
+picocluster64@pc24:~/ycsb-redis-binding-0.17.0 $
