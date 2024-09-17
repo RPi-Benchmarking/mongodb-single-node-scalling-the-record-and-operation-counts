@@ -290,9 +290,18 @@ sudo docker image prune -a
 
 sudo docker images
 
+...............
 
+in case if nodes donot join the swarm:
+use these
 
+sudo systemctl stop iptables
 
+sudo systemctl stop firewalls
+
+sudo systemctl disable firewalls
+
+...........
 
 
 Links:
