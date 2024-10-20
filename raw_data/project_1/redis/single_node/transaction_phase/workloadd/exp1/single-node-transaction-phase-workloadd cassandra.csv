@@ -1,6 +1,0 @@
-﻿operationcount,"[OVERALL], RunTime(ms)","[OVERALL], Throughput(ops/sec)","[TOTAL_GCS_G1_Young_Generation], Count","[TOTAL_GC_TIME_G1_Young_Generation], Time(ms)","[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%)","[TOTAL_GCS_G1_Old_Generation], Count","[TOTAL_GC_TIME_G1_Old_Generation], Time(ms)","[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%)","[TOTAL_GCs], Count","[TOTAL_GC_TIME], Time(ms)","[TOTAL_GC_TIME_%], Time(%)","[READ], Operations","[READ], AverageLatency(us)","[READ], MinLatency(us)","[READ], MaxLatency(us)","[READ], 95thPercentileLatency(us)","[READ], 99thPercentileLatency(us)","[READ], Return=OK,","[CLEANUP], Operations,","[CLEANUP], AverageLatency(us),","[CLEANUP], MinLatency(us),","[CLEANUP], MaxLatency(us),","[CLEANUP], 95thPercentileLatency(us),","[CLEANUP], 99thPercentileLatency(us),","[INSERT], Operations,","[INSERT], AverageLatency(us)","[INSERT], MinLatency(us),","[INSERT], MaxLatency(us),","[INSERT], 95thPercentileLatency(us)","[INSERT], 99thPercentileLatency(us)","[INSERT], Return=OK"
-60000,,1778.251978,,,,,,,,,,,7575.240967,,,,,,,,,,,,,9517.472185,,,,,
-70000,,1718.803713,,,,,,,,,,,7786.808551,,,,,,,,,,,,,16189.2174,,,,,
-80000,,1948.890351,,,,,,,,,,,7019.843042,,,,,,,,,,,,,11457.79882,,,,,
-90000,,2062.800825,,,,,,,,,,,6763.026786,,,,,,,,,,,,,8774.694476,,,,,
-100000,,2219.657285,,,,,,,,,,,6368.729012,,,,,,,,,,,,,7697.086538,,,,,
