@@ -1,5 +1,5 @@
-# master_thesis
-Performance Evaluation of MongoDB Database in Edge-Cloud Environment
+# Performance Evaluation of MongoDB Database in Edge Environment
+
 
 This repo includes all the works that are related to my master thesis.
 in my master thesis, we benchmarked the MongoDB database with the YCSB tool as it suits the cloud environment. The experimental tests include a single node, a docker swarm of two nodes, and a docker swarm of five. Then we integrated FIWARE Orion with mongoDB. 
