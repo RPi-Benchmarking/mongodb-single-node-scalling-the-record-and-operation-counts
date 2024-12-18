@@ -1,9 +1,8 @@
 # Performance Evaluation of MongoDB Database in Edge Environment
 
 
-This repo includes all the works that are related to my master thesis.
-in my master thesis, we benchmarked the MongoDB database with the YCSB tool as it suits the cloud environment. The experimental tests include a single node, a docker swarm of two nodes, and a docker swarm of five. Then we integrated FIWARE Orion with mongoDB. 
-we used Raspberry Pi, which simulates the edge device while the docker swarm simulates the cloud sittings.
+This repo includes all the works that are related to benchmarking mongodb on single node of Raspberry Pi (RPi) using YCSB as it suits the cloud environment. The experimental tests include a single node, a docker swarm of 9 nodes.
+
 - One of the problems we encountered and solved successfully is that in workload D in the run phase, no insert happens as there are conflicts with the already loaded data in the loading phase. we solved the problem by using this command in the loading phase:
 
   picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
