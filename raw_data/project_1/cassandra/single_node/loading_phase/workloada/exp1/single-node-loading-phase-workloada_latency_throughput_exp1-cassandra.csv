@@ -1,6 +1,0 @@
-﻿recordcount,RunTime,"[OVERALL], Throughput(ops/sec)","[INSERT], AverageLatency(us)",,,,,,,"[TOTAL_GC_TIME], Time(ms)","[TOTAL_GC_TIME_%], Time(%)","[READ], Operations","[READ], AverageLatency(us)","[READ], MinLatency(us)","[READ], MaxLatency(us)","[READ], 95thPercentileLatency(us)","[READ], 99thPercentileLatency(us)","[READ], Return=OK,","[CLEANUP], Operations,","[CLEANUP], AverageLatency(us),","[CLEANUP], MinLatency(us),","[CLEANUP], MaxLatency(us),","[CLEANUP], 95thPercentileLatency(us),","[CLEANUP], 99thPercentileLatency(us),","[UPDATE], Operations,","[UPDATE], AverageLatency(us),","[UPDATE], MinLatency(us),","[UPDATE], MaxLatency(us),","[UPDATE], 95thPercentileLatency(us)","[UPDATE], 99thPercentileLatency(us)","[UPDATE], Return=OK"
-60000,,1072.443563,13580.06998,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-70000,,2153.581098,6291.005686,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-80000,,2089.754976,6578.487513,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-90000,,2268.431002,6116.806744,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-100000,,2479.974208,5667.56033,,,,,,,,,,,,,,,,,,,,,,,,,,,,
