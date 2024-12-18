@@ -1,7 +1,7 @@
 # Performance Evaluation of MongoDB Database in Edge Environment
 
 
-This repo includes all the works that are related to benchmarking mongodb on single node of Raspberry Pi (RPi) using YCSB as it suits the cloud environment. The experimental tests include a single node, a docker swarm of 9 nodes.
+This repo includes all the works that are related to benchmarking mongodb on single node of Raspberry Pi (RPi) using YCSB as it suits the cloud environment. The experimental tests include a single node, a docker swarm of 9 nodes. The record counts, operation counts scaled from 60k to 70k,80k,90k,and 100k while the client thread fixed to 16.
 
 - One of the problems we encountered and solved successfully is that in workload D in the run phase, no insert happens as there are conflicts with the already loaded data in the loading phase. we solved the problem by using this command in the loading phase:
 
