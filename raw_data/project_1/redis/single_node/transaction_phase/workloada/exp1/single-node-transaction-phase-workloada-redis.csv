@@ -1,6 +1,0 @@
-﻿operationcount,"[OVERALL], RunTime(ms)","[OVERALL], Throughput(ops/sec)","[TOTAL_GCS_G1_Young_Generation], Count","[TOTAL_GC_TIME_G1_Young_Generation], Time(ms)","[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%)","[TOTAL_GCS_G1_Old_Generation], Count","[TOTAL_GC_TIME_G1_Old_Generation], Time(ms)","[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%)","[TOTAL_GCs], Count","[TOTAL_GC_TIME], Time(ms)","[TOTAL_GC_TIME_%], Time(%)","[READ], Operations","[READ], AverageLatency(us)","[READ], MinLatency(us)","[READ], MaxLatency(us)","[READ], 95thPercentileLatency(us)","[READ], 99thPercentileLatency(us)","[READ], Return=OK,","[CLEANUP], Operations,","[CLEANUP], AverageLatency(us),","[CLEANUP], MinLatency(us),","[CLEANUP], MaxLatency(us),","[CLEANUP], 95thPercentileLatency(us),","[CLEANUP], 99thPercentileLatency(us),","[UPDATE], Operations,","[UPDATE], AverageLatency(us)","[UPDATE], MinLatency(us),","[UPDATE], MaxLatency(us),","[UPDATE], 95thPercentileLatency(us)","[UPDATE], 99thPercentileLatency(us)","[UPDATE], Return=OK"
-60000,,3125.488358,,,,,,,,,,,286.9627399,,,,,,,,,,,,,311.5394943,,,,,
-70000,,3571.975302,,,,,,,,,,,256.0551219,,,,,,,,,,,,,271.3719337,,,,,
-80000,,3323.777473,,,,,,,,,,,274.814169,,,,,,,,,,,,,295.028317,,,,,
-90000,,3391.107762,,,,,,,,,,,270.8813706,,,,,,,,,,,,,288.9631524,,,,,
-100000,,3505.20523,,,,,,,,,,,259.5596636,,,,,,,,,,,,,280.4824493,,,,,
