@@ -5,28 +5,28 @@ This repository includes all the works that are related to benchmarking mongodb 
 
 - One of the problems we encountered and solved successfully is that in workload D in the run phase, no insert happens as there are conflicts with the already loaded data in the loading phase. we solved the problem by using this command in the loading phase:
 
-  picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+  picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://Your_IP:27017/admin"
 
 
   and this command in the transaction phase:
 
-picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p insertstart=100001 -p operationcount=100000 -p recordcount=100000 -threads 16 
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://Your_IP:27017/admin" -p insertstart=100001 -p operationcount=100000 -p recordcount=100000 -threads 16 
 
 - or change the configuration of the workloadd file in the ycsb directory to 100000 record counts and operations counts and then execute these commands:
 
 - loading phase:
 
--  picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+-  picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -threads 16 -p mongodb.url="mongodb://Your_IP:27017/admin"
 
 -  transaction phase:
 
--  picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p insertstart=100001  -threads 16
+-  picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://Your_IP:27017/admin" -p insertstart=100001  -threads 16
 
 -  and this is the approach we used.
   
-1. to load a record count of 5000 to the manager node, we used this command: sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=5000 -threads 16 -p mongodb.url="mongodb://10.0.13.230:27017/ycsb_data_manager"
+1. to load a record count of 5000 to the manager node, we used this command: sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=5000 -threads 16 -p mongodb.url="mongodb://Your_IP:27017/ycsb_data_manager"
 
-2. to load a record count tho the single pi setup, we used this command: sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://192.168.1.52:27017/admin"
+2. to load a record count tho the single pi setup, we used this command: sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://Your_IP:27017/admin"
 
 3. The orion version which we used is 3.12.0-next, rasbpery pi 4 Model B 8GB LPDDR RAM, 64-bit quad-core Cortex-A72 processor, 
 4. we used Yahoo! Cloud System Benchmark.
@@ -37,23 +37,23 @@ picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb
 Cluster:
    load:
 maanger
-   administrator@raspberrypi:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -p recordcount=30000 -threads 16 -p mongodb.url="mongodb://192.168.1.182:27017/ycsb_data_manager"
+   administrator@raspberrypi:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -p recordcount=30000 -threads 16 -p mongodb.url="mongodb://Your_IP:27017/ycsb_data_manager"
    
 ...................
 
    worker
-   sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -p recordcount=50000 -threads 16 -p mongodb.url="mongodb://192.168.1.196:27017/ycsb_data_worker"
+   sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -p recordcount=50000 -threads 16 -p mongodb.url="mongodb://Your_IP:27017/ycsb_data_worker"
    
    ..............................
    
    transaction:
    manager:
-   sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://192.168.1.182:27017/ycsb_data_manager" -p operationcount=20000 -threads 16
+   sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://Your_IP:27017/ycsb_data_manager" -p operationcount=20000 -threads 16
    
    ..............
    
    worker:
-   sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://192.168.1.196:27017/ycsb_data_worker" -p operationcount=40000 -threads 16
+   sudo ./bin/ycsb run  mongodb -s -P workloads/workloadc -p mongodb.url="mongodb://Your_IP:27017/ycsb_data_worker" -p operationcount=40000 -threads 16
    
 /////////////////////////////
    
@@ -178,9 +178,9 @@ uname -m
 Single Rpi
 loading phase
 
-administrator@raspberrypi:~/fe $ sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://192.168.1.52:27017/admin"
+administrator@raspberrypi:~/fe $ sudo ./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://Your_IP:27017/admin"
 
-transaction phaseadministrator@raspberrypi:~/fe $ sudo ./bin/ycsb run mongodb -s -P workloads/workloada  -p mongodb.url="mongodb://192.168.1.52:27017/admin" -p operationcount=100000 -threads 16
+transaction phaseadministrator@raspberrypi:~/fe $ sudo ./bin/ycsb run mongodb -s -P workloads/workloada  -p mongodb.url="mongodb://Your_IP:27017/admin" -p operationcount=100000 -threads 16
 
 …..
 Built docker swarem of 5 rpi
@@ -216,10 +216,10 @@ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
 
 Cassanda
 loading to single node
-sudo ./bin/ycsb load cassandra-cql -s -P workloads/workloada -p recordcount=50000 -threads 16 -p hosts="10.6.0.11" -p port=9042 -p cassandra.username=cassandra -p cassandra.password=cassandra
+sudo ./bin/ycsb load cassandra-cql -s -P workloads/workloada -p recordcount=50000 -threads 16 -p hosts="Your_IP" -p port=9042 -p cassandra.username=cassandra -p cassandra.password=cassandra
 
 transaction to sinlge node 
-sudo ./bin/ycsb run cassandra-cql -s -P workloads/workloada -p operationcount=50000 -threads 16 -p hosts="10.6.0.11" -p port=9042 -p cassandra.username=cassandra -p cassandra.password=cassandra
+sudo ./bin/ycsb run cassandra-cql -s -P workloads/workloada -p operationcount=50000 -threads 16 -p hosts="Your_IP" -p port=9042 -p cassandra.username=cassandra -p cassandra.password=cassandra
 
 ...............
 
@@ -248,11 +248,11 @@ There is no need to change the command if you change the specific original workl
 and then use the regular command without the insert  at modifications to the command.
 for example change the record count to 100000 and the operation count to 100000 in the original workload file and then use this for the loading phase
 
-- picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+- picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadd -p recordcount=100000 -threads 16 -p mongodb.url="mongodb://Your_IP:27017/admin"
 
 and this command for the transaction phase
 
-- picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd  -p mongodb.url="mongodb://10.0.13.240:27017/admin" -p operationcount=100000 -threads 16
+- picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd  -p mongodb.url="mongodb://Your_IP:27017/admin" -p operationcount=100000 -threads 16
 
 - .................
 
@@ -263,15 +263,15 @@ then check the status using these commands
 
 docker service ls
 
-docker service ps my_stack_name_mongo_dbpicocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+docker service ps my_stack_name_mongo_dbpicocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -threads 16 -p mongodb.url="mongodb://Your_IP:27017/admin"
 
 ................................
 
 loading phase:
-picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -threads 16 -p mongodb.url="mongodb://10.0.13.240:27017/admin"
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb load mongodb -s -P workloads/workloadc -threads 16 -p mongodb.url="mongodb://Your_IP:27017/admin"
 
 transaction phase:
-picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://10.0.13.240:27017/admin" -threads 16
+picocluster64@pc0:~/fe/ycsb-mongodb-binding-0.17.0 $ sudo ./bin/ycsb run mongodb -s -P workloads/workloadd -p mongodb.url="mongodb://Your_IP:27017/admin" -threads 16
 
 ............
 
