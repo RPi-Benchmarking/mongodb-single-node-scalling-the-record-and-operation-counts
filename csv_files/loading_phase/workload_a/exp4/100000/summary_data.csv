@@ -1,0 +1,17 @@
+section,metric,value
+OVERALL,RunTime(ms),41003
+OVERALL,Throughput(ops/sec),2438.8459381020903
+TOTAL_GC_TIME,Time(ms),213
+CLEANUP,Operations,16
+CLEANUP,AverageLatency(us),1061.25
+CLEANUP,MinLatency(us),4
+CLEANUP,MaxLatency(us),16879
+CLEANUP,95thPercentileLatency(us),32
+CLEANUP,99thPercentileLatency(us),16879
+INSERT,Operations,100000
+INSERT,AverageLatency(us),6135.98012
+INSERT,MinLatency(us),508
+INSERT,MaxLatency(us),442623
+INSERT,95thPercentileLatency(us),14999
+INSERT,99thPercentileLatency(us),24559
+INSERT,Return=OK,100000
